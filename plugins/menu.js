@@ -35,24 +35,26 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─❒ 「 *CekilBot-MD* 」 
-├ Hai, %ucapan %name! 👋
-├ 
-├ *Waktu:* 
-├ %wib WIB
-├ *Hari:* %week
-├ *Tanggal:* %date
-├ *Uptime:* %uptime (%muptime)
-╰❒ 
-╭─❒ 「 Profil %name 」 
-├ *Limit:* %limit
-├ *Level:* %level
-╰❒ *XP:* %exp
+Hai, %ucapan %name! 👋
+  
+*Waktu:* 
+%wib WIB
+%wita WITA
+%wit WIT
+*Hari:* %week
+*Tanggal:* %date
+*Uptime:* %uptime (%muptime)
+
+*Limit:* %limit
+*Level:* %level
+*XP:* %exp
 %readmore`.trimStart(),
   header: ' *%category*',
   body: ' • %cmd %islimit %isPremium',
   footer: '\n',
-  after: `*CekilBot-MD*
+  after: `*Made by ♡*
+*%npmname* | %version
+${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -160,7 +162,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       ['Sewa Bot', '/sewa'],
       ['Owner', '/owner']
     ], m)
-    /*let url = `https://telegra.ph/file/a8cc42951a33372fda0c9.jpg`.trim()
+    /*let url = `https://telegra.ph/file/ab1df70dfd5c2bac64da1.jpg`.trim()
     let res = await fetch(url)
     let buffer = await res.buffer()
     let message = await prepareWAMessageMedia({ image: buffer }, { upload: conn.waUploadToServer })
@@ -172,8 +174,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                             hydratedFooterText:'Ⓟ premium | Ⓛ limit',
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'Official Grub',
-                                    url: 'https://chat.whatsapp.com/CF4jm8T9FVx5MnD037B1nN'
+                                    displayText: 'Website',
+                                    url: 'https://Ainebot.github.io/'
                                 }
                             }, {
                                 quickReplyButton: {
