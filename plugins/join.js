@@ -13,6 +13,8 @@ let handler = async (m, { conn, text, isOwner, groupMetadata }) => {
    // conn.reply(`Bot telah di undang di group: ${groupMetadata.subject}\nCode ID: ${res}`, `62895330379186@s.whatsapp.net`)
     setTimeout(() => {
     conn.reply(res, `*${conn.user.name}* adalah bot whatsapp yang di bangun menggunakan Nodejs, diundang oleh @${m.sender.split`@`[0]} trial selama\n*${msToDate(global.db.data.chats[res].expired - new Date() * 1)}*\n\nUntuk Melihat List *Menu* bot ketik *#menu*\n\nJika ingin di perpanjang expired group harap hubungi *owner* kami..`.trim(), null, { contextInfo: { mentionedJid: [m.sender] } })
+    if (msg) return conn.sendBut(m.chat, msg, '❑ Silahkan klik menu dibawah ini', 'Menu', '.menu', m)
+    }
     }, 1500) 
     let chats = global.db.data.chats[res]
     if (!chats) chats = global.db.data.chats[res] = {}

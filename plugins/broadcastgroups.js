@@ -4,6 +4,7 @@ let handler = async (m, { conn, text }) => {
   let teks = text ? text : cc.text
   conn.reply(m.chat, `_Mengirim pesan broadcast ke ${groups.length} grup_`, m)
   for (let id of groups) await conn.copyNForward(id, conn.cMods(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 All Group Broadcast 」\n' + randomID(32)), true).catch(_ => _)
+  await conn.send2ButtonImg(id, bcbg, text.trim(), wm, 'Donate', '/donasi', 'Owner', '/owner', m)
   m.reply('Selesai Broadcast All Group :)')
 }
 handler.help = ['broadcastgroup', 'bcgc'].map(v => v + ' <teks>')
