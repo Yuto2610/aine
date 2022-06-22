@@ -4,8 +4,6 @@ let handler = async (m, { conn, text }) => {
   let teks = text ? text : cc.text
   conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
   for (let id of chats) await conn.copyNForward(id, conn.cMods(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 *' + author + ' All Chat Broadcast* 」'), true).catch(_ => _)
-  await conn.send2ButtonImg(id, bcbg, text.trim(), wm, 'Donate', '/donasi', 'Owner', '/owner', m)
-  }
   m.reply('Selesai Broadcast All Chat :)')
 }
 handler.help = ['broadcast', 'bc'].map(v => v + ' <teks>')
